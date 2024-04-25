@@ -1,0 +1,35 @@
+
+#master {
+    width: 100%;
+    margin-top: 0;
+    padding-top: 0;
+  }
+  
+ 
+  .header-container {
+    width: 100%;
+    box-sizing: border-box;
+
+    text-align: center;
+    padding-top: 0  ;
+    margin-top: 0;
+    background: #9a2b38;
+    position: sticky; 
+    top: 0;
+    z-index: 1000;
+  }
+  
+ 
+  .header-container h1 {
+    font-size: 3.5em;
+    color: #d7d7d7;
+    margin-bottom: 0.1em;
+    font-style: Georgia;
+  }
+  
+ 
+  .header-container .tagline {
+    font-size: 1.2em;
+    color: #b5b5b5;
+    font-style: italic;
+  }

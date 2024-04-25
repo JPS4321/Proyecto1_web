@@ -1,0 +1,23 @@
+.content {
+    background-color: #9a2b38;
+    max-height: 100%;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+    display: block;
+    max-width: 800px;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+  }
+  .content-title {
+    font-size: 24px;
+    color: #e0e0e0;
+    margin-bottom: 10px;
+  }
+  
+  .content-description {
+    font-size: 16px;
+    color: rgb(228, 228, 228);
+    line-height: 1.6;
+  }
