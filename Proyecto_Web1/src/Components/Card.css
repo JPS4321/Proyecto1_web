@@ -1,7 +1,7 @@
 .content {
   background-color: #9a2b38;
   max-height: 100%;
-  border-radius: 8px; /* Bordes redondeados */
+  border-radius: 8px;
   padding: 20px;
   margin: 20px 0;
   display: block;
@@ -9,11 +9,9 @@
   width: 100%;
   box-sizing: border-box;
   text-align: center;
-  border: 2px solid red; /* Borde rojo añadido */
-
 }
 
-.content-title {
+.card-content-title {
   font-size: 24px;
   color: #e0e0e0;
   margin-bottom: 10px;
@@ -23,4 +21,10 @@
   font-size: 16px;
   color: rgb(228, 228, 228);
   line-height: 1.6;
+}
+
+.content-image {
+  max-width: 100%;
+  border-radius: 8px;
+  margin-bottom: 10px;
 }
