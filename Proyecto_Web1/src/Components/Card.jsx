@@ -5,7 +5,7 @@ import './Card.css';
 function Card({ title, content, imageData }) {
     return (
         <div className="card">
-            <h2 className="card-title">{title}</h2>
+            <h1 className="card-title">{title}</h1>
             {imageData && <img src={imageData} alt={title} className="card-image"/>}
             <p className="card-description">{content}</p>
         </div>

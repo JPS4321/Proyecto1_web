@@ -1,6 +1,6 @@
 import React from 'react';
 import './Sidebar.css';
-import puppy from '../assets/react.svg';
+import puppy from '../assets/pff.webp';
 
 function Sidebar() {
     return (

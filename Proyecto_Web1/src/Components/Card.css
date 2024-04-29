@@ -1,26 +1,24 @@
-.content {
+.card {
   background-color: #9a2b38;
-  max-height: 100%;
-  border-radius: 8px; /* Bordes redondeados */
   padding: 20px;
-  margin: 20px 0;
-  display: block;
+  margin: 20px auto;
   max-width: 800px;
-  width: 100%;
-  box-sizing: border-box;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  border-radius: 10px;
+  color: white;
+}
+
+.card-title {
   text-align: center;
-  border: 2px solid red; /* Borde rojo añadido */
-
+  margin-bottom: 20px;
 }
 
-.content-title {
-  font-size: 24px;
-  color: #e0e0e0;
-  margin-bottom: 10px;
-}
+.card-image {
+  max-width: 100%;
+  max-height: 200px;
+  display: block;
+  margin: 0 auto;
+  height: auto;
+  border-radius: 10px;
 
-.content-description {
-  font-size: 16px;
-  color: rgb(228, 228, 228);
-  line-height: 1.6;
 }
