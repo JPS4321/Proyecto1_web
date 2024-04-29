@@ -1,0 +1,63 @@
+body{
+    overflow: hidden;
+    margin: 0;
+
+}
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #9a2b38;
+    color: #ffffff;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 20px;
+    margin: 0;
+  }
+  
+  .card {
+    width: 350px;
+    padding: 40px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    column-gap: 140px; /* Increase only horizontal spacing between columns */
+    row-gap: 30px; /* Optional: maintain or adjust row spacing as needed */
+
+}
+  
+  .button-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .subtitle {
+    margin-bottom: 5px;
+    color: #9a2b38;
+
+    }
+  .button {
+    width: 100%;
+    padding: 15px;
+    border-radius: 3px;
+    border: none;
+    background-color: #5cb85c;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  
