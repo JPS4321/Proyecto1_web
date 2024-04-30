@@ -1,0 +1,55 @@
+/* AdminPage.css */
+
+.container {
+    display: flex;
+    justify-content: center; /* Center the content horizontally */
+    align-items: center; /* Center the content vertically */
+    min-height: 100vh; /* Ensure the container covers the entire viewport height */
+  }
+  
+  .card {
+    background-color: #f9f9f9; /* Light background for the card */
+    border: 1px solid #ccc; /* Thin border around the card */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    padding: 20px; /* Inner padding around the card's content */
+    border-radius: 8px; /* Rounded corners for a softer look */
+    width: 50%; /* Set the card's width */
+  }
+  
+  .title {
+    font-size: 1.5rem; /* Larger font size for the title */
+    text-align: center; /* Center the title text */
+    margin-bottom: 20px; /* Space between the title and the grid */
+  }
+  
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    column-gap: 150px; /* Horizontal spacing between columns */
+    row-gap: 20px; /* Vertical spacing between rows */
+  }
+  
+  .button-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center align the subtitle and button */
+  }
+  
+  .subtitle {
+    margin-bottom: 5px; /* Space between the subtitle and the button */
+    color: #8B0000; /* Subtitle color to match the design */
+  }
+  
+  .button {
+    background-color: #4CAF50; /* Green background color */
+    color: #fff; /* White text */
+    padding: 10px 20px; /* Padding for a balanced button size */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Slightly rounded corners */
+    cursor: pointer; /* Change cursor on hover */
+  }
+  
+  .button:hover {
+    background-color: #45A049; /* Darker shade on hover */
+  }
+  

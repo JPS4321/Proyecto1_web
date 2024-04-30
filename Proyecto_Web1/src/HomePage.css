@@ -1,0 +1,16 @@
+/* HomePage.css */
+
+/* Add a scrollable container */
+.HomePage-container {
+    background-image: url('./assets/back.jpg'); /* Adjust path as needed */
+    background-size: cover; /* Make the image cover the entire container */
+    background-attachment: fixed; /* Fixes the background during scroll */
+    background-repeat: no-repeat; /* Prevent repetition */
+
+    overflow-y: auto; /* Enables vertical scrolling */
+    max-height: 100vh; /* Limits the height to the viewport's height */
+    box-sizing: border-box; /* Includes padding and border in the height calculation */
+    padding: 1rem; /* Provides spacing around the content */
+  }
+  
+  

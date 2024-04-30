@@ -1,19 +1,21 @@
-import { useState } from 'react'
-import './App.css'
-import Header from './Components/Header'
-import Navbar from './Components/Navbar'
-import Body from './Components/Body'
+import React from 'react';
+import HomePage from './HomePage';
+import Login from './AdminComponents/Login';
+import AdminPage from './AdminComponents/AdminPage';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-function App() {
-  const [count, setCount] = useState(0)
-
+const App = () => {
   return (
-    <div>
-          <Header/>
-          <Navbar/>
-          <Body/>
-    </div>
-  )
-}
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/admin" element={<AdminPage />} />
+        
 
-export default App
+      </Routes>
+    </Router>
+  );
+};
+
+export default App;

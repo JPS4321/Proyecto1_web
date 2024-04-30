@@ -6,7 +6,9 @@
   align-items: center; /* Esto asegura que el contenido esté centrado verticalmente */
 
 }
-
+.hidden {
+  display: none; /* Makes the navbar disappear when scrolling down */
+}
 .nav-links {
   list-style: none;
   padding: 0;
