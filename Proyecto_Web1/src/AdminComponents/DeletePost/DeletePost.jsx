@@ -1,47 +1,31 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './DeletePost.css';
+import useAPI from '../hooks/useAPI';
+import useForm from '../hooks/useForm';
 
 const DeletePost = () => {
   const navigate = useNavigate();
-  const [postIDs, setPostIDs] = useState([]);
-  const [selectedID, setSelectedID] = useState('');
-  const [title, setTitle] = useState('');
-  const [isLoading, setIsLoading] = useState(true);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch('http://localhost:3000/blogs');
-        const blogs = await response.json();
-        setPostIDs(blogs.map(blog => blog.id));
-        setIsLoading(false);
+  const { data: blogs, error, isLoading } = useAPI('http://localhost:3000/blogs', {});
 
-        if (blogs.length > 0) {
-          setTitle(blogs[0].title);
-        }
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      }
-    };
-    fetchData();
-  }, []);
+  const { formValues, setFormValues, handleSubmit } = useForm({
+    selectedID: '',
+    title: '',
+  });
 
-  useEffect(() => {
-    if (!selectedID) return;
-    const fetchData = async () => {
-      try {
-        const response = await fetch(`http://localhost:3000/blogs/${selectedID}`);
-        const [blog] = await response.json();
-        setTitle(blog.title);
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      }
-    };
-    fetchData();
-  }, [selectedID]);
+  const setSelectedIDAndTitle = (selectedID) => {
+    const selectedBlog = blogs.find(blog => blog.id === selectedID);
+    setFormValues((prevValues) => ({
+      ...prevValues,
+      selectedID,
+      title: selectedBlog?.title || '',
+    }));
+  };
 
-  const handleDelete = async () => {
+  const handleDelete = async (formValues) => {
+    const { selectedID } = formValues;
+
     try {
       const response = await fetch(`http://localhost:3000/blogs/${selectedID}`, {
         method: 'DELETE',
@@ -57,37 +41,35 @@ const DeletePost = () => {
     }
   };
 
-  if (isLoading) {
-    return <div>Loading...</div>;
-  }
+  if (isLoading) return <div>Loading...</div>;
+  if (error) return <div>Error: {error.message}</div>;
 
   return (
     <div className="container">
       <div className="card">
         <h1 className="title">Delete Post</h1>
-        <form onSubmit={(e) => { e.preventDefault(); handleDelete(); }} className="form">
+        <form onSubmit={handleSubmit(handleDelete)} className="form">
           <label htmlFor="postID">Select Post</label>
           <select
             className="input"
             id="postID"
-            value={selectedID}
-            onChange={(e) => setSelectedID(e.target.value)}
+            name="selectedID"
+            value={formValues.selectedID}
+            onChange={(e) => setSelectedIDAndTitle(e.target.value)}
           >
-            {postIDs.map(id => <option key={id} value={id}>{id}</option>)}
+            {blogs.map(blog => (
+              <option key={blog.id} value={blog.id}>{`${blog.id}: ${blog.title}`}</option>
+            ))}
           </select>
 
-          <label htmlFor="title">Post Title</label>
-          <input
-            className="input"
-            id="title"
-            type="text"
-            value={title}
-            disabled
-          />
+          <div className="post-details">
+            <label>Title:</label>
+            <span>{formValues.title}</span>
+          </div>
 
-          <div className="button-container">
+          <div className="buttons">
             <button className="button" type="button" onClick={() => navigate('/Admin')}>Back</button>
-            <button className="button" type="submit">Delete</button>
+            <button className="button delete" type="submit">Delete</button>
           </div>
         </form>
       </div>

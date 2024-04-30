@@ -18,6 +18,7 @@ const useForm = (initialState = {}) => {
 
   return {
     formValues,
+    setFormValues,
     handleChange,
     handleSubmit,
   };
