@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import useForm from '../hooks/useForm';
 import { useNavigate } from 'react-router-dom';
 import './CreatePost.css';
 
@@ -11,29 +12,31 @@ const toBase64 = (file) => new Promise((resolve, reject) => {
 
 const CreatePost = () => {
   const navigate = useNavigate();
-  const [title, setTitle] = useState('');
-  const [content, setContent] = useState('');
-  const [image, setImage] = useState(null);
 
-  const handleUpload = async () => {
+  const { formValues, handleChange, handleSubmit } = useForm({
+    title: '',
+    content: '',
+    image: null,
+  });
+
+  const handleUpload = async (formValues) => {
+    const { title, content, image } = formValues;
     if (!title || !content || !image) {
       alert('Datos en blanco');
       return;
     }
-    
+
     const base64Image = await toBase64(image);
     const response = await fetch('http://localhost:3000/blogs', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ title, content, image_data: base64Image }),
     });
-    console.log('Response status:', response.status);
+    
     const result = await response.json();
-    console.log('Response body:', result);
-
     if (result) {
       console.log('Post uploaded successfully:', result);
-      navigate('/Admin'); // Navigate to Admin upon success
+      navigate('/Admin');
     } else {
       alert('Failed to upload post');
     }
@@ -43,15 +46,16 @@ const CreatePost = () => {
     <div className="container">
       <div className="card">
         <h1 className="title">Create Post</h1>
-        <form onSubmit={(e) => { e.preventDefault(); handleUpload(); }} className="form">
+        <form onSubmit={handleSubmit(handleUpload)} className="form">
           <label htmlFor="title">Post Title</label>
           <input
             className="input"
             id="title"
             type="text"
             placeholder="Enter Title"
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
+            name="title"
+            value={formValues.title}
+            onChange={handleChange}
           />
 
           <label htmlFor="content">Post Content</label>
@@ -59,8 +63,9 @@ const CreatePost = () => {
             className="input"
             id="content"
             placeholder="Enter Content"
-            value={content}
-            onChange={(e) => setContent(e.target.value)}
+            name="content"
+            value={formValues.content}
+            onChange={handleChange}
           />
 
           <label htmlFor="image">Upload Image</label>
@@ -68,11 +73,10 @@ const CreatePost = () => {
             className="input"
             id="image"
             type="file"
-            onChange={(e) => setImage(e.target.files[0])}
+            onChange={(e) => handleChange({ target: { name: 'image', value: e.target.files[0] } })}
           />
 
           <button className="button" type="submit">Submit</button>
-          
         </form>
       </div>
     </div>
