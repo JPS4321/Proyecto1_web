@@ -18,21 +18,21 @@ function AdminPage() {
           {/* Row 1 */}
           <div class="button-group">
             <div class="subtitle">Ver Vista Visitante</div>
-            <button class="button" onClick={() => handleButtonClick('/option1')}>Go</button>
+            <button class="butto" onClick={() => handleButtonClick('/Admin/view')}>Go</button>
           </div>
           <div class="button-group">
             <div class="subtitle">Crear Post</div>
-            <button class="button" onClick={() => handleButtonClick('/option2')}>Go</button>
+            <button class="butto" onClick={() => handleButtonClick('/Admin/create')}>Go</button>
           </div>
 
           {/* Row 2 */}
           <div class="button-group">
             <div class="subtitle">Editar Post</div>
-            <button class="button" onClick={() => handleButtonClick('/option3')}>Go</button>
+            <button class="butto" onClick={() => handleButtonClick('/option3')}>Go</button>
           </div>
           <div class="button-group">
             <div class="subtitle">Eliminar Post</div>
-            <button class="button" onClick={() => handleButtonClick('/option4')}>Go</button>
+            <button class="butto" onClick={() => handleButtonClick('/option4')}>Go</button>
           </div>
         </div>
       </div>

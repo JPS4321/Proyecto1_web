@@ -40,7 +40,7 @@
     color: #8B0000; /* Subtitle color to match the design */
   }
   
-  .button {
+  .butto {
     background-color: #4CAF50; /* Green background color */
     color: #fff; /* White text */
     padding: 10px 20px; /* Padding for a balanced button size */
@@ -49,7 +49,7 @@
     cursor: pointer; /* Change cursor on hover */
   }
   
-  .button:hover {
+  .butto:hover {
     background-color: #45A049; /* Darker shade on hover */
   }
   
