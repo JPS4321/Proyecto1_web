@@ -9,6 +9,12 @@ function AdminPage() {
     navigate(path);
   };
 
+  const handleLogout = () => {
+    localStorage.removeItem('authToken');
+    
+    navigate('/');
+  };
+
   return (
     <div className="container">
       <div className="card">
@@ -32,9 +38,11 @@ function AdminPage() {
           </div>
           <div className="button-group">
             <div className="subtitle">Eliminar Post</div>
-            <button className="butto" onClick={() => handleButtonClick('/option4')}>Go</button>
+            <button className="butto" onClick={() => handleButtonClick('/Admin/delete')}>Go</button>
           </div>
         </div>
+
+        <button className="logout-button" onClick={handleLogout}>Logout</button>
       </div>
     </div>
   );
