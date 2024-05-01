@@ -18,8 +18,6 @@ const EditPostContent = () => {
         const blogs = await response.json();
         setPostIDs(blogs.map(blog => blog.id));
         setIsLoading(false);
-
-        // Set default values for title, content, and imageData based on the first blog
         if (blogs.length > 0) {
           const [firstBlog] = blogs;
           setTitle(firstBlog.title);
@@ -102,13 +100,14 @@ const EditPostContent = () => {
 
           <label htmlFor="content">Post Content</label>
           <textarea
-            className="input"
+            className="input1"
             id="content"
             value={content}
             onChange={(e) => setContent(e.target.value)}
           />
 
           <button className="button" type="submit">Submit</button>
+          <button className="button" type="button" onClick={() => navigate('/admin')}>Back to Admin</button>
         </form>
       </div>
     </div>

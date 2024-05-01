@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { Suspense, useState } from 'react';
 import useForm from '../hooks/useForm';
 import { useNavigate } from 'react-router-dom';
 import './CreatePost.css';
@@ -12,7 +12,7 @@ const toBase64 = (file) => new Promise((resolve, reject) => {
 
 const CreatePost = () => {
   const navigate = useNavigate();
-
+  
   const { formValues, handleChange, handleSubmit } = useForm({
     title: '',
     content: '',
@@ -32,10 +32,9 @@ const CreatePost = () => {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ title, content, image_data: base64Image }),
     });
-    
+
     const result = await response.json();
     if (result) {
-      console.log('Post uploaded successfully:', result);
       navigate('/Admin');
     } else {
       alert('Failed to upload post');
@@ -60,7 +59,7 @@ const CreatePost = () => {
 
           <label htmlFor="content">Post Content</label>
           <textarea
-            className="input"
+            className="input2"
             id="content"
             placeholder="Enter Content"
             name="content"
@@ -77,6 +76,7 @@ const CreatePost = () => {
           />
 
           <button className="button" type="submit">Submit</button>
+          <button className="button" type="button" onClick={() => navigate('/admin')}>Back to Admin</button>
         </form>
       </div>
     </div>

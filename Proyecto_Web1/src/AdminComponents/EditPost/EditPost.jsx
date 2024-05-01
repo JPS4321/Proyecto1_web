@@ -1,5 +1,4 @@
 import React, { Suspense } from 'react';
-import { useNavigate } from 'react-router-dom';
 
 const EditPost = () => {
   return (

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './Card.css'; // Asegúrate de tener Card.css en el mismo directorio o ajusta la ruta
+import './Card.css'; 
 
 function Card({ title, content, imageData }) {
     return (
@@ -15,7 +15,7 @@ function Card({ title, content, imageData }) {
 Card.propTypes = {
     title: PropTypes.string.isRequired,
     content: PropTypes.string.isRequired,
-    imageData: PropTypes.string, // Opcional para incluir una imagen o no
+    imageData: PropTypes.string, 
 };
 
 export default Card;

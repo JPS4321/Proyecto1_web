@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Login.css';
 
@@ -6,21 +6,27 @@ const Login = () => {
   const navigate = useNavigate();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  
+
+  // Function to check for a token and redirect automatically
+  useEffect(() => {
+    const authToken = localStorage.getItem('authToken');
+    if (authToken) {
+      navigate('/Admin');
+    }
+  }, []);
+
   const ret = () => {    
     navigate('/');
   };
+
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    // Esta lógica simula una validación sencilla. En un entorno real, harías una petición al backend.
     if (username === 'diego' && password === '123') {
       console.log('Usuario autenticado con éxito');
 
-      // Generamos un token de autenticación simulado. En un entorno real, este token vendría del backend.
-      const authToken = 'someGeneratedToken'; // En producción, esto debería ser un token generado por el backend
+      const authToken = 'someGeneratedToken'; 
 
-      // Guardamos el token en localStorage
       localStorage.setItem('authToken', authToken);
 
       navigate('/Admin');
@@ -50,7 +56,6 @@ const Login = () => {
           />
           <button className="butt" type="submit">Entrar</button>
           <button className="butt" onClick={ret}>Return</button>
-
         </form>
       </div>
     </div>

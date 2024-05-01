@@ -1,13 +1,12 @@
 import React from 'react';
-import Blog from '../../HomePage'; // Import Blog component
-import './ViewBlog.css'; // Import CSS
+import Blog from '../../HomePage'; 
+import './ViewBlog.css'; 
 
 function ViewBlog() {
   return (
     <div>
       <Blog />
 
-      {/* Floating Return Button */}
       <button className="return-button" onClick={() => window.history.back()}>Return</button>
     </div>
   );

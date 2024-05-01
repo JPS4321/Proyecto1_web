@@ -1,19 +1,19 @@
-/* ViewBlog.css */
+
 
 .return-button {
-    position: fixed; /* Fixed position to float */
-    top: 10px; /* Distance from the top */
-    left: 10px; /* Distance from the left */
-    padding: 15px 30px; /* Increase padding to make the button bigger */
-    background-color: #007bff; /* Button background color */
-    color: white; /* Button text color */
-    border: none; /* Remove button border */
-    border-radius: 5px; /* Round button corners */
-    cursor: pointer; /* Change cursor on hover */
-    z-index: 1000; /* Ensure it stays on top of other elements */
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    padding: 15px 30px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1000;
   }
   
   .return-button:hover {
-    background-color: #0056b3; /* Darker shade on hover */
+    background-color: #0056b3;
   }
   
