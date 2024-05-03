@@ -7,7 +7,6 @@ const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
-  // Function to check for a token and redirect automatically
   useEffect(() => {
     const authToken = localStorage.getItem('authToken');
     if (authToken) {
