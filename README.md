@@ -54,7 +54,7 @@ El proyecto incluye una variedad de dependencias definidas en los archivos `pack
 1. **Clona el repositorio**:
 
    ```bash
-   git clone [repositorio-url]
+   git clone https://github.com/JPS4321/Proyecto1_web/blob/PRUEBA-TALVEZ/README.md
    ```
 
 2. **Frontend**:
