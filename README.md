@@ -62,6 +62,9 @@ El proyecto incluye una variedad de dependencias definidas en los archivos `pack
    - **Instala las dependencias**:
      ```bash
      npm install
+     npm install react-router-dom
+     npm install react-lazy
+
      ```
 
    - **Inicia el servidor de desarrollo**:
