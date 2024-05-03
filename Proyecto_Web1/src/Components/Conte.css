@@ -9,6 +9,9 @@
     width: 100%;
     box-sizing: border-box;
     text-align: center;
+    margin-bottom: 20px; 
+
+
   }
   .content-title {
     font-size: 24px;
@@ -20,4 +23,8 @@
     font-size: 16px;
     color: rgb(228, 228, 228);
     line-height: 1.6;
+  }
+  .card{
+    margin-bottom: 20px; /* Ajusta este valor según sea necesario */
+
   }

@@ -3,23 +3,27 @@
   padding: 3px 20px;
   display: flex;
   justify-content: center;
-  align-items: center; /* Esto asegura que el contenido esté centrado verticalmente */
+  align-items: center;
+  border-radius: 20px;
+
 
 }
-
+.hidden {
+  display: none;
+}
 .nav-links {
   list-style: none;
   padding: 0;
   display: flex;
-  gap: 20px; /* Controla la separación entre elementos */
+  gap: 15px;
 }
 
 .nav-item {
-  padding: 0 10px; /* Añade espacio alrededor del texto dentro de los elementos */
-  min-width: 120px; /* Establece un ancho mínimo para cada elemento */
+  padding: 0 10px;
+  min-width: 120px;
   display: flex;
-  justify-content: center; /* Centra el contenido de los .nav-item */
-  align-items: center; /* Centra el contenido de los .nav-item verticalmente */
+  justify-content: center;
+  align-items: center;
 }
 
 .nav-item a {
@@ -29,4 +33,23 @@
 
 .nav-item a:hover {
   color: rgba(255, 255, 255, 0.703);
+}
+
+@media (max-width: 600px) {
+  .nav-links {
+      display: block;
+  }
+
+  .nav-item {
+      padding: 10px 0;
+  }
+
+  .nav-item a {
+      display: block;
+      font-size: 1em;
+  }
+
+  .nav-item + .nav-item {
+      border-top: 1px solid #ccc;
+  }
 }

@@ -1,9 +1,14 @@
 import React, { useState, useEffect } from 'react';
+<<<<<<< HEAD
 import axios from 'axios'; // You might need to install axios with npm or yarn
+=======
+import useAPI from '../AdminComponents/hooks/useAPI';
+>>>>>>> PRUEBA-TALVEZ
 import './Conte.css';
 import Card from './Card';
 
 function Conte() {
+<<<<<<< HEAD
     const [cardsData, setCardsData] = useState([]);
 
     useEffect(() => {
@@ -27,7 +32,20 @@ function Conte() {
                 <Card key={card.id} title={card.title} content={card.content} imageData={card.image_data} />
             ))}
         </div>
+=======
+    const { data: cardsData, error, isLoading } = useAPI('http://localhost:3000/blogs', {});
+  
+    if (isLoading) return <div>Loading...</div>;
+    if (error) return <div>Error: {error.message}</div>;
+  
+    return (
+      <div className="content">
+        {cardsData.map(card => (
+          <Card key={card.id} title={card.title} content={card.content} imageData={card.image_data} />
+        ))}
+      </div>
+>>>>>>> PRUEBA-TALVEZ
     );
-}
-
-export default Conte;
+  }
+  
+  export default Conte;

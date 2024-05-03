@@ -9,8 +9,14 @@
     flex: 1;
     background-color: #9a2b38;
     color: white;
+<<<<<<< HEAD
     border-radius: 10px;
 
+=======
+    border-radius: 8px;
+
+   
+>>>>>>> PRUEBA-TALVEZ
   }
 
   .sidebar p, .sidebar h1, .sidebar h2, .sidebar h3 {

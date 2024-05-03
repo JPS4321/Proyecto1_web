@@ -1,0 +1,13 @@
+.HomePage-container {
+    background-image: url('./assets/back.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+
+    overflow-y: auto;
+    max-height: 100vh;
+    box-sizing: border-box;
+    padding: 1rem;
+  }
+  
+  

@@ -1,5 +1,10 @@
 .card {
   background-color: #9a2b38;
+<<<<<<< HEAD
+=======
+  max-height: 100%;
+  border-radius: 8px;
+>>>>>>> PRUEBA-TALVEZ
   padding: 20px;
   margin: 20px auto;
   max-width: 800px;
@@ -10,6 +15,7 @@
 
 .card-title {
   text-align: center;
+<<<<<<< HEAD
   margin-bottom: 20px;
 }
 
@@ -20,5 +26,24 @@
   margin: 0 auto;
   height: auto;
   border-radius: 10px;
+=======
+  margin-bottom: 80px; 
+  
 
+}
+
+.card-content-title {
+  font-size: 24px;
+  color: #e0e0e0;
+  margin-bottom: 10px;
+}
+>>>>>>> PRUEBA-TALVEZ
+
+}
+
+.content-image {
+  max-width: 100%;
+  max-height: 300px;
+  border-radius: 8px;
+  margin-bottom: 10px;
 }
